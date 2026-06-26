@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura YAPO - Data Analyst & Digitalization Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* PROFIL */
+        .profil {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .profil p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* GRID LAYOUT */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* CARD */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        /* EXPERIENCE */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item h3 {
+            color: #764ba2;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .experience-item li:before {
+            content: "▸ ";
+            color: #667eea;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* PROJECTS */
+        .project {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project h3 {
+            color: #764ba2;
+            margin-bottom: 8px;
+        }
+
+        .project .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .project ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .project li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .project li:before {
+            content: "▸ ";
+            color: #667eea;
+            margin-right: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .title {
+                font-size: 1.2em;
+            }
+
+            header {
+                padding: 40px 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .contact-info {
+                gap: 15px;
+                font-size: 0.85em;
+            }
+        }
+
+        /* PRINT */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>LAURA YAPO</h1>
+            <p class="title">Data Analyst & Digitalization Engineer</p>
+            <div class="contact-info">
+                <span>📍 Lens (62)</span>
+                <span>📧 <a href="mailto:laura.yapo.pro@gmail.com">laura.yapo.pro@gmail.com</a></span>
+                <span>📱 07.44.55.47.54</span>
+                <span>✨ Disponible: Septembre 2026</span>
+            </div>
+        </header>
+
+        <!-- PROFIL -->
+        <div class="profil">
+            <h2 style="color: #667eea; margin-bottom: 15px;">Qui suis-je ?</h2>
+            <p>Étudiante bientôt en Mastère Intelligence Artificielle & Big Data avec une double compétence en développement fullstack et en analyse de données. Je conçois des solutions innovantes pour optimiser les processus métier et améliorer la prise de décision grâce aux données.</p>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid">
+            <!-- EXPERIENCE -->
+            <div class="card">
+                <h2>💼 Expérience</h2>
+
+                <div class="experience-item">
+                    <h3>Stagiaire Développement d'Outils Chantier – Projet EvoluD</h3>
+                    <p><strong>Sogea Caroni, filiale Vinci Construction</strong></p>
+                    <p class="date">Avril 2026 – Août 2026</p>
+                    <ul>
+                        <li>Architecture fullstack: FastAPI + React + SQLite</li>
+                        <li>Digitalization de 5000 logements (EvoluD)</li>
+                        <li>Système de génération de devis (395 articles)</li>
+                        <li>Automatisation PDF et rapports</li>
+                        <li>Power BI & SharePoint</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Stagiaire Analyse de Données</h3>
+                    <p><strong>Transports Bray</strong></p>
+                    <p class="date">Mars 2025 – Mai 2025</p>
+                    <ul>
+                        <li>BI & Téléphonie: Power BI dashboards</li>
+                        <li>Extraction CDR depuis 3CX</li>
+                        <li>Suivi incidents (SQL)</li>
+                        <li>Prototype app signature électronique</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- COMPÉTENCES -->
+            <div class="card">
+                <h2>🛠️ Compétences Techniques</h2>
+                
+                <h4 style="color: #764ba2; margin-top: 15px;">Langages & Frameworks</h4>
+                <div class="skills-container" style="margin-bottom: 20px;">
+                    <span class="skill">Python (FastAPI)</span>
+                    <span class="skill">JavaScript/React</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">Java</span>
+                    <span class="skill">C</span>
+                </div>
+
+                <h4 style="color: #764ba2;">Data & BI</h4>
+                <div class="skills-container" style="margin-bottom: 20px;">
+                    <span class="skill">Power BI</span>
+                    <span class="skill">Excel (Advanced)</span>
+                    <span class="skill">Pandas</span>
+                    <span class="skill">Plotly</span>
+                </div>
+
+                <h4 style="color: #764ba2;">Outils & Plateformes</h4>
+                <div class="skills-container">
+                    <span class="skill">AppSheet</span>
+                    <span class="skill">SharePoint</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">VS Code</span>
+                    <span class="skill">Linux</span>
+                </div>
+            </div>
+
+            <!-- PROJETS -->
+            <div class="card">
+                <h2>🚀 Projets</h2>
+
+                <div class="project">
+                    <h3>UrbanSense – Cartographie Émotionnelle</h3>
+                    <p class="date">Février – Mars 2026</p>
+                    <ul>
+                        <li>Analyse NLP de 100 000 avis (Inside Airbnb)</li>
+                        <li>Heatmaps émotionnelles des 20 arrondissements</li>
+                        <li>4 recommandations pour la Ville de Paris</li>
+                        <li>Python, Matplotlib, Folium</li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>EvoluD – Digitalization Sogea Caroni</h3>
+                    <p class="date">En cours - Stage</p>
+                    <ul>
+                        <li>5000 logements en réhabilitation thermique</li>
+                        <li>APIs FastAPI pour devis & PDF</li>
+                        <li>Intégration AppSheet + React</li>
+                        <li>Webhooks & automation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FORMATION -->
+            <div class="card">
+                <h2>🎓 Formation</h2>
+
+                <div class="experience-item">
+                    <h3>Mastère Intelligence Artificielle & Big Data</h3>
+                    <p><strong>Epitech ou ESGI (selon mes choix)</strong></p>
+                    <p class="date">Septembre 2026 – 2028</p>
+                    <p style="color: #666;">RNCP Niveau 7 - Alternance recherchée en Hauts-de-France</p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Licence Informatique</h3>
+                    <p><strong>Université d'Artois, Lens</strong></p>
+                    <p class="date">2021–2025</p>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <h4 style="color: #764ba2; margin-bottom: 10px;">Langues</h4>
+                    <p>🇫🇷 Français (Maternel) | 🇬🇧 Anglais (B2)</p>
+                </div>
+            </div>
+
+            <!-- INTÉRÊTS -->
+            <div class="card">
+                <h2>🎯 Centres d'Intérêt</h2>
+                <div class="skills-container" style="margin-top: 15px;">
+                    <span class="skill">🏐 Volleyball</span>
+                    <span class="skill">🎹 Piano</span>
+                    <span class="skill">🏀 Basketball</span>
+                    <span class="skill">🧗 Escalade</span>
+                    <span class="skill">💃 Danse</span>
+                    <span class="skill">✍️ Écriture</span>
+                    <span class="skill">🍳 Cuisine</span>
+                </div>
+
+                <h3 style="color: #764ba2; margin-top: 30px; margin-bottom: 15px;">Objectif Carrière</h3>
+                <p style="color: #666;">Devenir <strong>Data Project Manager (Cheffe de Projet Analyse de Données)</strong> en construisant une expérience multi-secteur pour piloter des transformations data complexes.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h2 style="color: white; border-bottom-color: white;">📞 Me Contacter</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Je suis à la recherche d'une <strong>alternance en Intelligence Artificielle & Big Data</strong> pour septembre 2026 dans la région Hauts-de-France pour mon Mastère.</p>
+                
+                <div style="margin-top: 25px;">
+                    <p style="margin-bottom: 10px;">✉️ <a href="mailto:laura.yapo.pro@gmail.com" style="color: white; text-decoration: underline;">laura.yapo.pro@gmail.com</a></p>
+                    <p style="margin-bottom: 10px;">📱 <a href="tel:0744554754" style="color: white; text-decoration: underline;">07.44.55.47.54</a></p>
+                    <p>📍 Lens (62) • Disponible: Septembre 2026</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Portfolio de Laura YAPO © 2026 | En attente de mon site web ! 🚀</p>
+        </footer>
+    </div>
+</body>
+</html>
